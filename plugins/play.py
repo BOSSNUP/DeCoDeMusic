@@ -254,15 +254,7 @@ async def play(_, message: Message):
         duration = round(audio.duration / 60)
         views = "Locally added"
 
-        keyboard = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("🚨 Support", url="t.me/decodesupport"),
-                    InlineKeyboardButton("📡 Updates", url="t.me/DeeCodebots"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
-            ]
-        )
+        
 
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)
@@ -292,15 +284,7 @@ async def play(_, message: Message):
                 dur += int(dur_arr[i]) * secmul
                 secmul *= 60
 
-            keyboard = InlineKeyboardMarkup(
-                [
-                    [
-                        InlineKeyboardButton("🚨 Support", url="t.me/decodesupport"),
-                        InlineKeyboardButton("📡 Updates", url="t.me/DeeCodebots"),
-                    ],
-                    [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
-                ]
-            )
+            
 
         except Exception as e:
             title = "NaN"
@@ -355,15 +339,7 @@ async def play(_, message: Message):
             print(str(e))
             return
 
-        keyboard = InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("🚨 Support", url="t.me/decodesupport"),
-                    InlineKeyboardButton("📡 Updates", url="t.me/DeeCodebots"),
-                ],
-                [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
-            ]
-        )
+        
 
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
