@@ -23,6 +23,7 @@ from helpers.gets import get_url, get_file_name
 from helpers.channelmusic import get_chat_id
 import aiofiles
 import ffmpeg
+from plugins.inline import (play_keyboard, search_markup, play_markup, playlist_markup, audio_markup, play_list_keyboard)
 from PIL import Image, ImageFont, ImageDraw
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import InputAudioStream
@@ -361,7 +362,7 @@ async def play(_, message: Message):
                 message.from_user.mention(),
                 position,
             ),
-            reply_markup=keyboard,
+            reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
         await callsmusic.pytgcalls.join_group_call(
