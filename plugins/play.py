@@ -34,7 +34,7 @@ chat_id = None
 DISABLED_GROUPS = []
 useer = "NaN"
 ACTV_CALLS = []
-
+buttons = playlist_markup
 
 def cb_admin_check(func: Callable) -> Callable:
     async def decorator(client, cb):
@@ -186,8 +186,7 @@ async def play(_, message: Message):
     lel = await message.reply("🔄 **Processing...**")
 
     administrators = await get_administrators(message.chat)
-    chid = message.chat.id
-
+    chid = message.chat.id    
     try:
         user = await USER.get_me()
     except:
