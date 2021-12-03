@@ -31,3 +31,4 @@ lyricsgenius
 pafy
 youtube_dl
 yt_dlp
+heroku3
